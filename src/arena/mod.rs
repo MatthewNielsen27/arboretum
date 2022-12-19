@@ -39,8 +39,10 @@ pub mod prelude {
 
 use prelude::*;
 
+pub type Id = usize;
+
 pub struct Arena<T> {
-    storage: Arc<RwLock<HashMap<usize, SharedRef<T>>>>,
+    storage: Arc<RwLock<HashMap<Id, SharedRef<T>>>>,
     id_counter: AtomicUsize
 }
 
